@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+
+    id 'org.springframework.boot' version '3.1.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group 'org.pacman'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //spring boot (нет тестов)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    //spring boot thymeleaf template
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.0.5'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+
+    // test
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+javafx {
+    version = "19"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+mainClassName = 'com.pacman.Main'
