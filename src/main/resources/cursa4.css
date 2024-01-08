@@ -1,0 +1,26 @@
+.background {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #09ea35);
+}
+
+.mainPanelTextField {
+    -fx-background-color: #5dc246;
+}
+
+.activePanelButton {
+    -fx-background-color:#5dc246;
+    -fx-border-color: #36850b;
+    -fx-cursor: hand;
+}
+
+.activePanelButton:hover{
+    -fx-background-color: #36850b;
+}
+
+.notActivePanelButton {
+    -fx-background-color: #5dc246;
+    -fx-cursor: hand;
+}
+
+.notActivePanelButton:hover{
+    -fx-background-color: #89be6f;
+}

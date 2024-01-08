@@ -1,4 +1,4 @@
-package com.pacman;
+package ru.stepanoff;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,16 +23,20 @@ public class Main extends Application {
     @Override
     public void init() throws IOException {
         springContext = SpringApplication.run(Main.class);
-        FXMLLoader fxmlLoader = new FXMLLoader(ClassLoader.getSystemClassLoader().getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ClassLoader.getSystemClassLoader().getResource("cursa4.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
+
         rootNode = fxmlLoader.load();
     }
 
+
     @Override
     public void start(Stage stage) {
-        Scene scene = new Scene(rootNode, 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(rootNode, 800, 600);
+
+        stage.setTitle("Курсовая");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
